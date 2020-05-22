@@ -32,11 +32,9 @@ services:
     # so they determine the order of service startup.
     links:
       - mongo
-    external_links:
-      - TFT-Builder-production
     networks:
       - api-analytics
-      - analytics
+      - tft-builder_analytics
   mongo:
     image: "mongo:3.4"
     ports:
@@ -44,7 +42,7 @@ services:
     networks:
       - api-analytics
 networks:
-  analytics:
+  tft-builder_analytics:
     external: true
   api-analytics:
     driver: bridge
