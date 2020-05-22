@@ -32,6 +32,8 @@ services:
     # so they determine the order of service startup.
     links:
       - mongo
+    external_links:
+      - TFT-Builder-production
     networks:
       - api-analytics
       - analytics
