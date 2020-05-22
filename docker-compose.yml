@@ -32,7 +32,17 @@ services:
     # so they determine the order of service startup.
     links:
       - mongo
+    networks:
+      - api-analytics
+      - analytics
   mongo:
     image: "mongo:3.4"
     ports:
       - "27017:27017"
+  networks:
+    - api-analytics
+networks:
+  analytics:
+    external: true
+  api-analytics:
+    driver: bridge
