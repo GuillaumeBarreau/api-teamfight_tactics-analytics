@@ -20,7 +20,7 @@ services:
 
     # Set environment variables from this file
     env_file:
-      - .env
+      - ../bin/.env
 
     # Overwrite any env var defined in .env file (if required)
     environment:
